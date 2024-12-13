@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header a#logout {
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+header a#logout:hover {
+    background-color: #FF000F;
+
+}
+
+.dashboard-container {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.menu {
+    width: 20%;
+    background-color: #444;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.menu button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu button:hover {
+    background-color: #666;
+}
+
+.content {
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+table.borderlessCalendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.borderlessCalendar td {
+    padding: 10px;
+    border: none;
+}
+
+table.borderlessCalendar button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+table.borderlessCalendar button:hover {
+    background-color: #4CAF45;
+}
+
+table.borderlessMyEvents {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.borderlessMyEvents td {
+    padding: 10px;
+    border: none;
+}
+
+table.borderlessMyEvents button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+table.borderlessMyEvents button:hover {
+    background-color: #FF000F;
+}
