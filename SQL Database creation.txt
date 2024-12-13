@@ -1,0 +1,34 @@
+CREATE DATABASE hitsquaddb
+
+CREATE TABLE UsersTable (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    emailAddress VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL, -- Store hashed passwords
+    securityQuestion VARCHAR(255) NOT NULL,
+    securityAnswer VARCHAR(255) NOT NULL,
+    fieldCategory VARCHAR(9) NOT NULL, -- Binary string for categories like "Cat 5" = 100000000
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+CREATE TABLE EventsTable (
+    eventId INT AUTO_INCREMENT PRIMARY KEY,
+    eventName VARCHAR(255) NOT NULL,
+    eventDate DATE NOT NULL,
+    eventLocation VARCHAR(255) NOT NULL,
+    eventCategory VARCHAR(9) NOT NULL, -- Binary string for category compatibility
+    createdBy INT NOT NULL, -- Foreign key linking to UsersTable
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (createdBy) REFERENCES UsersTable(id) ON DELETE CASCADE
+)
+
+
+CREATE TABLE UsersEvents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL, -- Foreign key linking to UsersTable
+    eventId INT NOT NULL, -- Foreign key linking to EventsTable
+    registrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userId) REFERENCES UsersTable(id) ON DELETE CASCADE,
+    FOREIGN KEY (eventId) REFERENCES EventsTable(eventId) ON DELETE CASCADE
+);

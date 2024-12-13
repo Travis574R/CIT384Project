@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HitBoard Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png"> <!-- Favicon Reference -->
+    <script defer src="signup.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>HitBoard Signup</h1>
+    </header>
+
+    <!-- Signup Form -->
+    <main>
+        <section class="form-container">
+            <form id="signupForm" method="POST" action="signup/process_signup.php">
+                <!-- First Name -->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <!-- Field Category -->
+                <label for="fieldCategory">Field Category:</label>
+                <div id="fieldCategory">
+                    <label><input type="checkbox" name="fieldCategory[]" value="Cat 5"> Cat 5</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="Cat 4"> Cat 4</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="Cat 3"> Cat 3</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="Cat 2"> Cat 2</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="Cat 1"> Cat 1</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="35+"> 35+</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="45+"> 45+</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="55+"> 55+</label>
+                    <label><input type="checkbox" name="fieldCategory[]" value="Too damn old"> Too damn old</label>
+                </div>
+
+                <!-- Email -->
+                <label for="emailAddress">Email Address:</label>
+                <input type="emailAddress" id="emailAddress" name="emailAddress" required>
+
+                <!-- Password -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <!-- Security Question -->
+                <label for="securityQuestion">Security Question:</label>
+                <select id="securityQuestion" name="securityQuestion" required>
+                    <option value="">Select a question</option>
+                    <option value="elementary_school">What was your elementary school?</option>
+                    <option value="mother_maiden_name">What is your mother's maiden name?</option>
+                    <option value="favorite_pet">What is your favorite pet's name?</option>
+                </select>
+
+                <!-- Security Question Answer -->
+                <label for="securityAnswer">Answer:</label>
+                <input type="text" id="securityAnswer" name="securityAnswer" required>
+
+                <!-- Submit Button -->
+                <button type="submit">Sign Up</button>
+
+                <!-- Redirect Buttons -->
+                <p><a href="../login/login.html">Already have an account? Login here</a></p>
+                <p><a href="../index.html">Home</a> </p>
+
+                <!-- Signup Notification -->
+                <div id="notification" style="display: none; text-align: center; margin-top: 15px;"></div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
